@@ -1,31 +1,24 @@
-# Postman2curl
+# postman2curl
+A gem for converting Postman JSON exports into CURL statements.
 
-TODO: Write a gem description
+## Useage
+Clone the repository.
 
-## Installation
+    git clone htts://foo ~/myproject
 
-Add this line to your application's Gemfile:
+Bundle the Gem, then install.
 
-```ruby
-gem 'postman2curl'
-```
+    cd ~/myproject && bundle
+    rake install
 
-And then execute:
+Get an exported collection. From Postman, find your collection and click share. Save the exported file.
 
-    $ bundle
+    # Assuming you saved your collection as ~/Desktop/my-collection.json
+    # From your terminal, perform a conversion
 
-Or install it yourself as:
+    > postman2curl convert ~/Desktop/my-collection.json
+    >
+    > # Login to engrade
+    > curl -X POST -d 'apitask=user-login&apikey=12345678&api=json&usr=foo&pwd=bar' "https://api.example.com/"
 
-    $ gem install postman2curl
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/postman2curl/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+** Inspired by Joseph Vartuli ( https://github.com/joevartuli/POSTManToCurl ) **
